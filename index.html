@@ -27,8 +27,7 @@
 <main class="container">
 <section class="box drop" id="drop">
 <p><strong>Drag &amp; Drop</strong> gambar (bisa banyak) atau klik untuk pilih</p>
-<input id="fileInput" type="file" multiple
-  accept=".jpg,.jpeg,.png,.heic,.heif,image/jpeg,image/png,image/heic,image/heif,image/heif-sequence">
+<input accept=".jpg,.jpeg,.png,.heic,.heif,.hevc,image/jpeg,image/png,image/heic,image/heif,image/heif-sequence,image/hevc" id="fileInput" multiple="" type="file"/>
 </section>
 <section class="box">
 <h2>Canvas Story</h2>
@@ -63,7 +62,6 @@
 <label>Margin dari atas (px) <input id="mTop" max="600" min="0" type="number" value="120"/></label>
 <label>Opacity <input id="oTop" max="1" min="0" step="0.01" type="range" value="1"/></label>
 <label>Warna <input id="cTop" type="color" value="#ffffff"/></label>
-
 </div>
 </section>
 <section class="box">
@@ -86,7 +84,6 @@
 <label>Offset dari tengah (px) <input id="mCtr" max="600" min="-600" type="number" value="0"/></label>
 <label>Opacity <input id="oCtr" max="1" min="0" step="0.01" type="range" value="1"/></label>
 <label>Warna <input id="cCtr" type="color" value="#ffffff"/></label>
-
 </div>
 </section>
 <section class="box">
@@ -109,7 +106,6 @@
 <label>Margin dari bawah (px) <input id="mBot" max="600" min="0" type="number" value="120"/></label>
 <label>Opacity <input id="oBot" max="1" min="0" step="0.01" type="range" value="1"/></label>
 <label>Warna <input id="cBot" type="color" value="#ffffff"/></label>
-
 </div>
 </section>
 <div class="btns">
@@ -119,7 +115,7 @@
 <section class="grid" id="grid"></section>
 </main>
 <footer><div class="container"><p>© 2025 | Ryan Brilian Fatsena</p></div></footer>
-<script src="app.js"></script>
+<script src="https://unpkg.com/heic2any/dist/heic2any.min.js"></script><script src="app.js"></script>
 <script>
 (function(){
   const apply = (mode) => { document.documentElement.setAttribute('data-theme', mode); localStorage.setItem('theme', mode); document.getElementById('themeLabel').textContent = mode==='dark'?'Light':'Dark'; };
