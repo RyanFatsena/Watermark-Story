@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Watermark Story Iyan</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="fonts-reset.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=The+Seasons&amp;display=swap" rel="stylesheet"/>
+<meta content="Alat cepat untuk memberi watermark teks seperti judul/story pada gambar secara massal. Mode gelap/terang, pengaturan font, stroke, opacity, dan ekspor sekali klik." name="description"/><meta content="#2563eb" name="theme-color"/><meta content="Watermark Story Iyan" property="og:title"/><meta content="Beri watermark teks untuk banyak gambar dengan desain rapi dan cepat." name="og:description"/><meta content="website" property="og:type"/></head>
+<body class="app-body">
+<header><div class="container">
+<div class="header-bar">
+<div class="brand">
+<div class="logo">WS</div>
+<div>
+<h1>Watermark Story Iyan</h1>
+<div class="subtitle sub">Batch watermark &amp; export • client‑side</div>
+</div>
+</div>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">🌓 <span id="themeLabel">Dark</span></button>
+</div>
+</div></header>
+<main class="container">
+<section class="box drop" id="drop">
+<p><strong>Drag &amp; Drop</strong> gambar (bisa banyak) atau klik untuk pilih</p>
+<input accept="image/*" id="fileInput" multiple="" type="file"/>
+</section>
+<section class="box">
+<h2>Canvas Story</h2>
+<div class="row">
+<label>Ukuran Story
+          <select id="preset">
+<option selected="" value="1080x1920">1080 × 1920 (9:16)</option>
+<option value="1080x1350">1080 × 1350 (4:5)</option>
+<option value="1080x1080">1080 × 1080 (1:1)</option>
+</select>
+</label>
+<label>Resize (persen) <input id="resizePct" max="100" min="10" type="number" value="100"/></label>
+</div>
+</section>
+<section class="box">
+<h2>Judul Atas</h2>
+<div class="row">
+<label>Teks <input id="tTop" type="text" value="Senin"/></label>
+<label>Font
+          <select id="fTop">
+<option selected="" value="The Seasons">The Seasons</option>
+<option value="Poppins">Poppins</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Roca One">Roca One</option>
+<option value="Roxborough CF">Roxborough CF</option>
+<option value="More Sugar">More Sugar</option>
+<option value="Bryndan Write">Bryndan Write</option>
+<option value="Migra">Migra</option>
+</select>
+</label>
+<label>Ukuran (px) <input id="sTop" max="300" min="12" type="number" value="40"/></label>
+<label>Margin dari atas (px) <input id="mTop" max="600" min="0" type="number" value="120"/></label>
+<label>Opacity <input id="oTop" max="1" min="0" step="0.01" type="range" value="1"/></label>
+<label>Warna <input id="cTop" type="color" value="#ffffff"/></label>
+
+</div>
+</section>
+<section class="box">
+<h2>Judul Tengah</h2>
+<div class="row">
+<label>Teks <input id="tCtr" type="text" value="Daily Vlog"/></label>
+<label>Font
+          <select id="fCtr">
+<option selected="" value="The Seasons">The Seasons</option>
+<option value="Poppins">Poppins</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Roca One">Roca One</option>
+<option value="Roxborough CF">Roxborough CF</option>
+<option value="More Sugar">More Sugar</option>
+<option value="Bryndan Write">Bryndan Write</option>
+<option value="Migra">Migra</option>
+</select>
+</label>
+<label>Ukuran (px) <input id="sCtr" max="300" min="12" type="number" value="50"/></label>
+<label>Offset dari tengah (px) <input id="mCtr" max="600" min="-600" type="number" value="0"/></label>
+<label>Opacity <input id="oCtr" max="1" min="0" step="0.01" type="range" value="1"/></label>
+<label>Warna <input id="cCtr" type="color" value="#ffffff"/></label>
+
+</div>
+</section>
+<section class="box">
+<h2>Kredit Bawah</h2>
+<div class="row">
+<label>Teks <input id="tBot" type="text" value="13/10/2025"/></label>
+<label>Font
+          <select id="fBot">
+<option selected="" value="The Seasons">The Seasons</option>
+<option value="Poppins">Poppins</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Roca One">Roca One</option>
+<option value="Roxborough CF">Roxborough CF</option>
+<option value="More Sugar">More Sugar</option>
+<option value="Bryndan Write">Bryndan Write</option>
+<option value="Migra">Migra</option>
+</select>
+</label>
+<label>Ukuran (px) <input id="sBot" max="200" min="10" type="number" value="40"/></label>
+<label>Margin dari bawah (px) <input id="mBot" max="600" min="0" type="number" value="120"/></label>
+<label>Opacity <input id="oBot" max="1" min="0" step="0.01" type="range" value="1"/></label>
+<label>Warna <input id="cBot" type="color" value="#ffffff"/></label>
+
+</div>
+</section>
+<div class="btns">
+<button class="btn primary" id="go">Proses</button>
+<button class="btn danger" id="clr">Clear</button>
+</div>
+<section class="grid" id="grid"></section>
+</main>
+<footer><div class="container"><p>© 2025 | Ryan Brilian Fatsena</p></div></footer>
+<script src="app.js"></script>
+<script>
+(function(){
+  const apply = (mode) => { document.documentElement.setAttribute('data-theme', mode); localStorage.setItem('theme', mode); document.getElementById('themeLabel').textContent = mode==='dark'?'Light':'Dark'; };
+  const saved = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  apply(saved);
+  document.getElementById('themeToggle').addEventListener('click', ()=> apply(document.documentElement.getAttribute('data-theme')==='dark' ? 'light' : 'dark'));
+})();
+</script>
+</body>
+</html>

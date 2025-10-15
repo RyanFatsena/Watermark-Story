@@ -1,0 +1,11 @@
+/* Auto-generated font reset */
+:root {
+  --font-main: 'Montserrat', 'Roca One', 'Poppins', 'The Seasons', 'Bryndan Write', 'Migra', 'Roxborough CF', sans-serif;
+
+  --primary: #2563eb;
+  --link-color: #1d4ed8;
+  --accent: #3b82f6;
+}
+html, body, * {
+  font-family: var(--font-main) !important;
+}
