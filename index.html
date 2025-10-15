@@ -115,7 +115,8 @@
 <section class="grid" id="grid"></section>
 </main>
 <footer><div class="container"><p>© 2025 | Ryan Brilian Fatsena</p></div></footer>
-<script src="https://unpkg.com/heic2any/dist/heic2any.min.js"></script><script src="app.js"></script>
+<script src="https://unpkg.com/heic2any/dist/heic2any.min.js" crossorigin></script><script src="app.js"></script>
+
 <script>
 (function(){
   const apply = (mode) => { document.documentElement.setAttribute('data-theme', mode); localStorage.setItem('theme', mode); document.getElementById('themeLabel').textContent = mode==='dark'?'Light':'Dark'; };
